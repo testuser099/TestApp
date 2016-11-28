@@ -3,7 +3,19 @@
 		<title>The Greatest Blog in the World</title>	
 	</head>	
 	<body>	
-		<p>This is not the greatest blog in the world...</p>
-		<p>This is just a tribute.</p>
+		
+		<div>
+			<h2>This is not the greatest blog in the world...</h2>
+			<h2>This is just a tribute.</h2>
+		</div>
+		
+		{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</div>
+		{% endfor %}
+
 	</body>
 </html>
